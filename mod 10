@@ -1,0 +1,24 @@
+loop = 0
+c = 0
+while loop == 0:
+    a = str(input("enter book code: "))
+    f = len(a) - 1
+    #bulk of 9 digit calc
+    for i in range(len(a)-1):
+        c += int(a[i]) * (len(a) - i)
+        print(c)
+    
+    #check last digit
+    e = c % 11
+    e = 11 - e
+    if e == int(a[f]):
+        print('valid')
+    else:
+        print('invalid')
+    
+    choice = input('would you like to convert again? ')
+    
+    if choice == 'no':
+        loop = 1
+    else:
+        print('ok, doing again')
